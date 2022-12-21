@@ -1,0 +1,52 @@
+.card {
+    background-color: var(--nav-color);
+    display: flex;
+    flex-direction: column;
+    width: 18.75rem;
+    height: 10.547rem;
+    /* justify-content: flex-end; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    transition-property: all;
+    transition-duration: 1s;
+    font-size: 1.1rem;
+  }
+  
+  .actionButtons {
+    display: none;
+  }
+  
+  .actionButtons button {
+    background: transparent;
+    border: none;
+    color: var(--card-text-color);
+  }
+  
+  .actionButtons button:hover {
+    background: var(--card-button-background-hover-color);
+    border: none;
+    border-radius: 1rem;
+  }
+  
+  .card:hover .actionButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+  }
+  
+  .card:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .examAlreadyTaken {
+    display: none;
+  }
+  
+  .card:hover .examAlreadyTaken .actionButtons {
+    display: block;
+  }
+  

@@ -1,0 +1,17 @@
+.navContainer {
+    background-color: var(--nav-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .right {
+    display: flex;
+    column-gap: 2rem;
+  }
+  
+  .logoutBtn:hover {
+    cursor: pointer;
+  }

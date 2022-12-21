@@ -1,0 +1,9 @@
+export { Home } from "./Home/Home";
+export { StudentLogin } from "./studentLogin/StudentLogin";
+export { StaffLogin } from "./staffLogin/StaffLogin";
+export { StaffSignup } from "./staffSignup/StaffSignup";
+export { StudentSignup } from "./studentSignup/StudentSignup";
+export { StudentPortal } from "./studentPortalHome/StudentPortalHome.js"
+export { StaffPortalHome } from "./staffPortalHome/StaffPortalHome";
+export { ExamPaper } from "./examPaper/ExamPaper";
+export { AddQuestion } from "./addQuestion/AddQuestion";

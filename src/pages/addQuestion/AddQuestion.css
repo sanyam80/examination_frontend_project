@@ -1,0 +1,28 @@
+.addQuestionPage {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .questionForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-top: 3rem;
+    align-self: center;
+    width: 80%;
+  }
+  
+  .questionForm > input {
+    font-size: 1rem;
+    padding: 0.4rem;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  
+  .questionForm > button {
+    background-color: var(--button-dark-color);
+    color: var(--text-color);
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+  }

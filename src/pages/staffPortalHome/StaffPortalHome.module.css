@@ -1,0 +1,25 @@
+.allExamCards {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3rem;
+    column-gap: 3rem;
+    margin: 3rem;
+  }
+  
+  .addTest {
+    background-color: var(--nav-color);
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18.75rem;
+    height: 10.547rem;
+    border-radius: 0.5rem;
+    transition-property: all;
+    transition-duration: 1s;
+  }
+  
+  .addTest:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }

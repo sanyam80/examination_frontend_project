@@ -1,0 +1,31 @@
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .users {
+    display: flex;
+    column-gap: 4rem;
+  }
+  
+  .loginType {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    width: 15rem;
+    color: white;
+    font-size: x-large;
+    background-color: var(--button-dark-color);
+    border-radius: 1rem;
+  }
+  
+  .loginType:hover {
+    background-color: var(--button-light-color);
+  }

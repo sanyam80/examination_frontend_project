@@ -1,0 +1,60 @@
+.loginPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .form {
+    background-color: var(--nav-color);
+    display: flex;
+    flex-direction: column;
+    min-width: 20%;
+    padding: 2rem 2rem 2rem 2rem;
+    row-gap: 2rem;
+    border-radius: 1.5rem;
+  }
+  
+  .title {
+    align-self: center;
+    font-size: 1.4rem;
+  }
+  
+  .form input {
+    border-radius: 0.5rem;
+    height: 2rem;
+    display: block;
+    width: 100%;
+  }
+  
+  .form button {
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .loginBtn {
+    background-color: var(--button-dark-color);
+    /* color: white; */
+    width: 100%;
+  }
+  
+  .loginBtn:hover {
+    background-color: var(--button-light-color);
+  }
+  
+  .signupLine {
+    font-size: 1.1rem;
+    align-self: center;
+  }
+  
+  .signup {
+    color: var(--button-dark-color);
+    text-decoration: none;
+  }
+  
+  .signup:hover {
+    color: var(--button-light-color);
+  }
