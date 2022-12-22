@@ -37,6 +37,7 @@ export function StudentLogin() {
             id="email"
             name="email"
             value={userDetail.email}
+            placeholder = "Enter your email here"
             required
             onChange={(e) =>
               setUserDetail({ ...userDetail, email: e.target.value })
@@ -50,6 +51,7 @@ export function StudentLogin() {
             id="password"
             name="password"
             value={userDetail.password}
+            placeholder = "Enter your password here"
             required
             onChange={(e) =>
               setUserDetail({ ...userDetail, password: e.target.value })

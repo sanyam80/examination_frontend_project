@@ -41,6 +41,7 @@ export function StudentSignup() {
             id="name"
             name="name"
             value={userDetail.name}
+            placeholder="Enter your name here"
             required
             onChange={(e) =>
               setUserDetail({ ...userDetail, name: e.target.value })
@@ -54,6 +55,7 @@ export function StudentSignup() {
             id="email"
             name="email"
             value={userDetail.email}
+            placeholder="Enter your email here"
             required
             onChange={(e) =>
               setUserDetail({ ...userDetail, email: e.target.value })
@@ -67,6 +69,7 @@ export function StudentSignup() {
             id="password"
             name="password"
             value={userDetail.password}
+            placeholder="Enter your password here"
             required
             onChange={(e) =>
               setUserDetail({ ...userDetail, password: e.target.value })
@@ -75,7 +78,6 @@ export function StudentSignup() {
         </div>
         <div>
           <button className={style.loginBtn}>SIGNUP</button>
-          <br />
         </div>
         <p className={style.signupLine}>
           Already a user?{" "}

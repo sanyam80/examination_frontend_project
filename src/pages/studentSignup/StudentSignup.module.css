@@ -7,7 +7,6 @@
   }
   
   .form {
-    background-color: var(--nav-color);
     display: flex;
     flex-direction: column;
     min-width: 20%;
@@ -34,27 +33,30 @@
     padding: 0.5rem;
     font-size: 1rem;
   }
-  
+  input{
+    text-align: center;
+  }
+  label{
+    font-size: 20px;
+  }
   .loginBtn {
-    background-color: var(--button-dark-color);
+    background-color: #3b82f6;
+    color:white;
     
-    width: 100%;
   }
   
-  .loginBtn:hover {
-    background-color: var(--button-light-color);
-  }
+  
   
   .signupLine {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     align-self: center;
+    margin-top: -10px;
   }
   
   .signup {
-    color: var(--button-dark-color);
+    color:#3b82f6;
+
     text-decoration: none;
   }
   
-  .signup:hover {
-    color: var(--button-light-color);
-  }
+  

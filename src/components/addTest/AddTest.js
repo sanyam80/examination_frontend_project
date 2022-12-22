@@ -1,4 +1,4 @@
-import style from "./AddTest.css";
+import style from "./AddTest.module.css";
 import { addNewExam } from "../../features/index";
 import { useDispatch } from "react-redux";
 import { useState } from "react";

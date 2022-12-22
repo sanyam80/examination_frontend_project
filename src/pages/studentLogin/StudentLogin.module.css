@@ -5,6 +5,12 @@
     justify-content: center;
     align-items: center;
   }
+  label{
+    font-size: 20px;
+  }
+  input{
+    text-align: center;
+  }
   
   .form {
     background-color: var(--nav-color);
@@ -36,25 +42,22 @@
   }
   
   .loginBtn {
-    background-color: var(--button-dark-color);
-    /* color: white; */
-    width: 100%;
+    background-color: #3b82f6;
+    color:white;
+    
   }
   
-  .loginBtn:hover {
-    background-color: var(--button-light-color);
-  }
+  
   
   .signupLine {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     align-self: center;
+    margin-top:-10px;
   }
   
   .signup {
-    color: var(--button-dark-color);
-    text-decoration: none;
-  }
+     color:#3b82f6;
+     text-decoration: none;
+ }
   
-  .signup:hover {
-    color: var(--button-light-color);
-  }
+  

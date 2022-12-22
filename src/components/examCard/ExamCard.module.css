@@ -12,6 +12,13 @@
     transition-duration: 1s;
     font-size: 1.1rem;
   }
+  .exam_card{
+    font-size: 32px;;
+  }
+  .exam_name{
+    font-size: 30px;
+    margin-left: 40px;
+  }
   
   .actionButtons {
     display: none;

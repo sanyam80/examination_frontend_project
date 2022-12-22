@@ -1,4 +1,4 @@
-import style from "./ExamCard.css";
+import style from "./ExamCard.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const ExamCard = ({ examId, examName, examScore }) => {
@@ -8,12 +8,12 @@ export const ExamCard = ({ examId, examName, examScore }) => {
   console.log(pathname);
   return (
     <div className={style.card}>
-      <p>{examName}</p>
+      <p className={style.exam_card}>{examName}</p>
       {examScore || examScore === 0 ? (
         <p>Marks Scored: {examScore}</p>
       ) : (
         localStorage.getItem("studentDetail") && (
-          <p onClick={() => navigate(`/examPaper/${examId}`)}>Start Exam</p>
+          <p className = {style.exam_name} onClick={() => navigate(`/examPaper/${examId}`)}>Start Exam</p>
         )
       )}
       {(examScore || examScore === 0) && (

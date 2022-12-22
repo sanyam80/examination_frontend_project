@@ -1,4 +1,4 @@
-import style from "./Navbar.css";
+import style from "./Navbar.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { studentLogout, staffLogout } from "../../features/index";
@@ -36,7 +36,7 @@ export function Navbar() {
       <p>Online Examinaton Portal</p>
       <div className={style.right}>
         {/* <p className="">Student Status</p> */}
-        <p>Welcome {name}</p>
+        <p className={style.name}>Welcome {name}</p>
         <p onClick={logoutHandler} className={style.logoutBtn}>
           Logout
         </p>
