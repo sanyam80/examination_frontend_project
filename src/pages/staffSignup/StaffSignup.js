@@ -38,6 +38,7 @@ export function StaffSignup() {
             type="text"
             id="name"
             name="name"
+            placeholder="Enter your name here"
             value={userDetail.name}
             required
             onChange={(e) =>
@@ -51,6 +52,7 @@ export function StaffSignup() {
             type="email"
             id="email"
             name="email"
+            placeholder = "Enter your email here"
             value={userDetail.email}
             required
             onChange={(e) =>
@@ -64,6 +66,7 @@ export function StaffSignup() {
             type="password"
             id="password"
             name="password"
+            placeholder = "Enter your password here"
             value={userDetail.password}
             required
             onChange={(e) =>
@@ -73,7 +76,7 @@ export function StaffSignup() {
         </div>
         <div>
           <button className={style.loginBtn}>SIGNUP</button>
-          <br />
+          
         </div>
         <p className={style.signupLine}>
           Already a user?{" "}

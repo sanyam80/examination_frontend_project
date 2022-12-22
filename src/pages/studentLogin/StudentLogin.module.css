@@ -13,7 +13,7 @@
   }
   
   .form {
-    background-color: var(--nav-color);
+   
     display: flex;
     flex-direction: column;
     min-width: 20%;

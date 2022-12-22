@@ -34,6 +34,7 @@ export function StaffLogin() {
             type="email"
             id="email"
             name="email"
+            placeholder="Enter your email here"
             value={userDetail.email}
             required
             onChange={(e) =>
@@ -47,6 +48,7 @@ export function StaffLogin() {
             type="password"
             id="password"
             name="password"
+            placeholder = "Enter your password here"
             value={userDetail.password}
             required
             onChange={(e) =>
