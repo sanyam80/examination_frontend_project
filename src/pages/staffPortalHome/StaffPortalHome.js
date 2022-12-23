@@ -31,7 +31,7 @@ export const StaffPortalHome = () => {
           
         ))}
         <div className={style.addTest} onClick={() => setModal(true)}>
-          +
+          <button>Add Test</button>
         </div>
       </div>
       {modal && <AddTestModal setModal={setModal} />}

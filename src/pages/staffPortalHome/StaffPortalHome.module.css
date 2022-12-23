@@ -7,7 +7,7 @@
   }
   
   .addTest {
-    background-color: var(--nav-color);
+    padding-top: 10px;
     font-size: 4rem;
     display: flex;
     justify-content: center;
