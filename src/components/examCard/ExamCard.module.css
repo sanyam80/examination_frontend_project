@@ -11,9 +11,12 @@
     transition-property: all;
     transition-duration: 1s;
     font-size: 1.1rem;
+    margin-left: 30px;
   }
   .exam_card{
-    font-size: 32px;;
+    font-size: 38px;
+    padding-top: 60px;
+    
   }
   .exam_name{
     font-size: 30px;
@@ -22,18 +25,20 @@
   
   .actionButtons {
     display: none;
+    
   }
   
   .actionButtons button {
     background: transparent;
     border: none;
-    color: var(--card-text-color);
+    color: black;
+    font-size: 16px;
   }
   
   .actionButtons button:hover {
-    background: var(--card-button-background-hover-color);
+    
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
   }
   
   .card:hover .actionButtons {
@@ -46,7 +51,7 @@
   
   .card:hover {
     cursor: pointer;
-    transform: scale(1.2);
+    
   }
   
   .examAlreadyTaken {

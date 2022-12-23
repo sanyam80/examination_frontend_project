@@ -46,6 +46,8 @@ export const ExamPaper = () => {
 
   const deleteQuestionHandler = (questionId) => {
     dispatch(deleteQuestion({ questionId: questionId }));
+    navigate("/staffPortalHome")
+    alert("The question is been deleted")
   };
 
   return (
@@ -61,8 +63,8 @@ export const ExamPaper = () => {
             index
           ) => (
             <div>
-              <div className={style.question}>
-                <span>Question {index + 1}.</span>
+              <div className = {style.get_questions}>
+                <span>Question {index + 1}. </span>
                 <span>{question}</span>
               </div>
               <div>
@@ -70,11 +72,12 @@ export const ExamPaper = () => {
                   type="radio"
                   id={option1}
                   name={question_id}
+                  className = {style.radio_btn}
                   value={JSON.stringify([index, option1])}
                   checked={option1 === selected[index]}
                   onChange={changeHandler}
                 />
-                <label htmlFor={option1}>{option1}</label>
+                <label className = {style.option_label}>{option1}</label>
               </div>
               <div>
                 <input
@@ -85,7 +88,7 @@ export const ExamPaper = () => {
                   checked={option2 === selected[index]}
                   onChange={changeHandler}
                 />
-                <label htmlFor={option2}>{option2}</label>
+                <label className = {style.option_label}>{option2}</label>
               </div>
               <div>
                 <input
@@ -96,7 +99,7 @@ export const ExamPaper = () => {
                   checked={option3 === selected[index]}
                   onChange={changeHandler}
                 />
-                <label htmlFor={option3}>{option3}</label>
+                <label className = {style.option_label}>{option3}</label>
               </div>
               <div>
                 <input
@@ -107,15 +110,15 @@ export const ExamPaper = () => {
                   checked={option4 === selected[index]}
                   onChange={changeHandler}
                 />
-                <label htmlFor={option4}>{option4}</label>
+                <label className = {style.option_label}>{option4}</label>
               </div>
               {pathname.split("/")[1] === "deleteQuestions" && (
-                <p
+                <button
                   className={style.deleteBtn}
                   onClick={() => deleteQuestionHandler(question_id)}
                 >
-                  Delete the above Question
-                </p>
+                  Delete
+                </button>
               )}
             </div>
           )

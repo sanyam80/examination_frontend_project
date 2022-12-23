@@ -11,6 +11,12 @@
     margin-top: 3rem;
     align-self: center;
     width: 80%;
+    
+  }
+
+  input{
+    height:60px;
+    margin-top: 5rem;
   }
   
   .questionForm > input {
@@ -20,9 +26,16 @@
     border-radius: 0.5rem;
   }
   
-  .questionForm > button {
-    background-color: var(--button-dark-color);
-    color: var(--text-color);
-    padding: 0.5rem;
-    border-radius: 0.4rem;
+  
+  button{
+    margin-top: 20px;
+    height:50px;
+    width:130px;
+    background-color: #3b82f6;
+    color:white;
+    border-color: #3b82f6;
+    border-radius: 10px;
+    
+    
   }
+  

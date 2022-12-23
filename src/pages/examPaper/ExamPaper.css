@@ -1,10 +1,13 @@
 .allQuestions {
+  
     margin: 3rem;
     font-size: 1.2rem;
     display: flex;
     flex-direction: column;
     row-gap: 4rem;
+    
   }
+ 
   
   .noQuestions {
     margin-left: 50%;
@@ -16,17 +19,32 @@
     display: flex;
     column-gap: 1.5rem;
   }
-  
+  .allQuestions{
+    margin-top: 20px;
+  }
+  .option_label{
+    padding-top:-10px;
+    font-size: 20px;
+  }
+  input{
+    margin-top: 20px;
+
+  }
   .deleteBtn {
-    background-color: var(--delete-btn-color);
-    color: var(--text-color);
+
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
   }
+  span{
+    padding-top: 20px;
+    font-size: 2rem;
+  }
+  label{
+    font-size: 1.2rem;
+  }
   
   .submitBtn {
-    background-color: var(--button-dark-color);
-    color: var(--text-color);
+    color: black;
     padding: 1rem;
     border-radius: 0.4rem;
     font-size: 1.2rem;

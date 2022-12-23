@@ -6,8 +6,31 @@
     row-gap: 3rem;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
   }
+  .home_header{
+    color:white;
+  }
+  .home_header{
+    background-color: #3b82f6;
+    width:100%;
+    border-radius: 20px;
+    margin-top: -420px;
+  }
+
+
+  .login_header{
+    color:black;
+    
+  }
+  .link > h1 {
+    color:black;
+  
+  }
+  .link{
+    text-decoration: none;
+  }
+ 
   
   .users {
     display: flex;

@@ -42,6 +42,7 @@ export const AddQuestion = () => {
         {allExamsWithScores.find((exam) => exam.examId === examId)?.examName}
         <input
           type="text"
+
           placeholder="Enter Question"
           onChange={(e) =>
             setCompleteQuestion({
@@ -107,7 +108,9 @@ export const AddQuestion = () => {
           }
           value={completeQuestion.correct_ans}
         />
-        <button>Add Question</button>
+        <div className={style.addquestion_btn}>
+         <button>Add Question</button>
+        </div>
       </form>
     </div>
   );

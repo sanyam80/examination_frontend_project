@@ -14,16 +14,16 @@ export const Home = () => {
   //   })();
   // }, []);
   return (
-    <main className={style.home}>
-      <h1>Welcome To Online Examination Portal</h1>
+    <div className={style.home}>
+      <div className = {style.home_header}><h1>Welcome To Online Examination Portal</h1></div>
       <div className={style.users}>
-        <Link to="/studentLogin" className={style.loginType}>
-          Student Login
+        <Link className = {style.link} to="/studentLogin">
+         <h1>Student Login</h1> 
         </Link>
-        <Link to="/staffLogin" className={style.loginType}>
-          Staff Login
+        <Link className = {style.link} to="/staffLogin">
+          <h1>Staff Login</h1> 
         </Link>
       </div>
-    </main>
+    </div>
   );
 };

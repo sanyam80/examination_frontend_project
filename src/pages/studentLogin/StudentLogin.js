@@ -60,7 +60,7 @@ export function StudentLogin() {
         </div>
         <div>
           <button className={style.loginBtn}>LOGIN</button>
-          <br />
+          
         </div>
         <p className={style.signupLine}>
           New here?{" "}

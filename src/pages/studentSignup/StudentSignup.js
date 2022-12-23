@@ -35,7 +35,7 @@ export function StudentSignup() {
       <h1>Welcome To Student Signup</h1>
       <form className={style.form} onSubmit={signupHandler}>
         <div>
-          <label htmlFor="name">Name</label>
+          <label>Name</label>
           <input
             type="text"
             id="name"

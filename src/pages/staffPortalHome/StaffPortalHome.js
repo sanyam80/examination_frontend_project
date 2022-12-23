@@ -3,6 +3,7 @@
 import { Navbar, ExamCard, AddTestModal } from "../../components/index";
 import { useEffect, useState } from "react";
 import { getAllExamsWithScores } from "../../features/index";
+import { AddQuestion } from "../addQuestion/AddQuestion";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./StaffPortalHome.module.css";
 
@@ -14,6 +15,9 @@ export const StaffPortalHome = () => {
     dispatch(getAllExamsWithScores());
   }, [modal]);
 
+  // const addQuestions = () =>{
+  //   return <AddQuestion />
+  // }
   return (
     <div>
       <Navbar />
@@ -24,6 +28,7 @@ export const StaffPortalHome = () => {
             examId={exam?.examId}
             key={exam?.examName}
           />
+          
         ))}
         <div className={style.addTest} onClick={() => setModal(true)}>
           +
