@@ -15,14 +15,16 @@ export const StudentPortal = () => {
   return (
     <div>
       <Navbar />
-      <div className={style.allExamCards}>
+      <div>
         {allExamsWithScores.map((exam) => (
-          <ExamCard
-            examName={exam?.examName}
-            examScore={exam?.score}
+          <div className = "shadow-lg p-3  m-5 bg-body rounded">
+            
+          <ExamCard examName={exam?.examName} examScore={exam?.score}
             examId={exam?.examId}
             key={exam?.examName}
+            
           />
+          </div>
         ))}
       </div>
     </div>

@@ -33,6 +33,9 @@ export const AddQuestion = () => {
       exam: examId,
     });
   };
+  const addQuestion = ()=>{
+    alert("Question is been added to the test")
+  }
 
   return (
     <div className={style.addQuestionPage}>
@@ -109,7 +112,7 @@ export const AddQuestion = () => {
           value={completeQuestion.correct_ans}
         />
         <div className={style.addquestion_btn}>
-         <button>Add Question</button>
+         <button onClick = {()=>addQuestion}>Add Question</button>
         </div>
       </form>
     </div>

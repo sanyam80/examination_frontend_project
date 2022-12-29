@@ -1,5 +1,5 @@
 .card {
-    background-color: var(--nav-color);
+    
     display: flex;
     flex-direction: column;
     width: 18.75rem;
@@ -9,17 +9,19 @@
     align-items: center;
     border-radius: 0.5rem;
     transition-property: all;
-    transition-duration: 1s;
-    font-size: 1.1rem;
+    
+    font-size: 1rem;
     margin-left: 30px;
   }
   .exam_card{
-    font-size: 38px;
-    padding-top: 60px;
+    font-size: 37px;
+    /* padding-top: 50px; */
+    color: #3b82f6;
+
     
   }
   .exam_name{
-    font-size: 30px;
+    font-size: 22px;
     
   }
   

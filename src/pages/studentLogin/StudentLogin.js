@@ -1,11 +1,13 @@
 
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import style from "./StudentLogin.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { studentLogin } from "../../features/index";
+
 import { toast } from "react-toastify";
+import {Input,Label,Button,Form,FormGroup} from "reactstrap";
 
 export function StudentLogin() {
   const [userDetail, setUserDetail] = useState({ email: null, password: null });
@@ -27,14 +29,15 @@ export function StudentLogin() {
   };
 
   return (
-    <div className={style.loginPage}>
-      <h1>Welcome To Student Login</h1>
-      <form className={style.form} onSubmit={loginHandler}>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
+    <div>
+      <h2>Welcome To Student Login</h2>
+      <div>
+      <Form className = "mt-20" onSubmit={loginHandler}>
+        <FormGroup>
+          <Label htmlFor="email" className = "d-block">Email</Label>
+          <Input
             type="email"
-            id="email"
+            className="w-50 m-auto text-center h-100"
             name="email"
             value={userDetail.email}
             placeholder = "Enter your email here"
@@ -43,13 +46,15 @@ export function StudentLogin() {
               setUserDetail({ ...userDetail, email: e.target.value })
             }
           />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
+        </FormGroup>
+        {' '}
+        
+        <FormGroup>
+          <Label htmlFor="password" className = "d-block">Password</Label>
+          <Input
             type="password"
-            id="password"
             name="password"
+            className="w-50 m-auto text-center h-100"
             value={userDetail.password}
             placeholder = "Enter your password here"
             required
@@ -57,18 +62,17 @@ export function StudentLogin() {
               setUserDetail({ ...userDetail, password: e.target.value })
             }
           />
-        </div>
-        <div>
-          <button className={style.loginBtn}>LOGIN</button>
-          
-        </div>
-        <p className={style.signupLine}>
+        </FormGroup>
+        {' '}
+         <Button className = "h-70">LOGIN</Button>
+          <p className = "pt-100">
           New here?{" "}
-          <Link to="/studentSignup" className={style.signup}>
+          <Link to="/studentSignup">
             Signup
           </Link>{" "}
         </p>
-      </form>
+      </Form>
+      </div>
     </div>
   );
 }

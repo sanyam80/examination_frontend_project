@@ -3,7 +3,10 @@
     flex-wrap: wrap;
     row-gap: 3rem;
     column-gap: 3rem;
-    margin: 3rem;
+    margin: 3.5rem;
+
+  
+ 
   }
   
   .addTest {
@@ -17,6 +20,10 @@
     border-radius: 0.5rem;
     transition-property: all;
     transition-duration: 1s;
+  }
+  .button_name{
+    margin-top: 80px;
+    margin-left: 100px;
   }
   
   .addTest:hover {

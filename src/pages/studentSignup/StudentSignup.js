@@ -3,7 +3,9 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { studentSignup } from "../../features/index";
+import {Input,Label,Button,Form,FormGroup} from "reactstrap";
 import { toast } from "react-toastify";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 
 export function StudentSignup() {
@@ -31,14 +33,16 @@ export function StudentSignup() {
   };
 
   return (
-    <div className={style.loginPage}>
-      <h1>Welcome To Student Signup</h1>
-      <form className={style.form} onSubmit={signupHandler}>
-        <div>
-          <label>Name</label>
-          <input
+    <div>
+     <h1>Welcome To Student Signup</h1>
+     <div className="mt-20">
+      <Form onSubmit={signupHandler}>
+
+        <FormGroup>
+          <Label class = "d-block">Name</Label>
+          <Input
             type="text"
-            id="name"
+            className = "w-50 m-auto text-center h-100"
             name="name"
             value={userDetail.name}
             placeholder="Enter your name here"
@@ -47,12 +51,13 @@ export function StudentSignup() {
               setUserDetail({ ...userDetail, name: e.target.value })
             }
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
+        </FormGroup>
+        {' '}
+        <FormGroup>
+          <Label class = "d-block" htmlFor="email">Email</Label>
+          <Input
             type="email"
-            id="email"
+            className = "w-50 m-auto text-center h-100"
             name="email"
             value={userDetail.email}
             placeholder="Enter your email here"
@@ -61,12 +66,13 @@ export function StudentSignup() {
               setUserDetail({ ...userDetail, email: e.target.value })
             }
           />
-        </div>
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
+        </FormGroup>
+        {' '}
+        <FormGroup>
+          <Label className = "d-block" htmlFor="password">Password</Label>
+          <Input
             type="password"
-            id="password"
+            className="w-50 m-auto text-center h-100"
             name="password"
             value={userDetail.password}
             placeholder="Enter your password here"
@@ -75,17 +81,18 @@ export function StudentSignup() {
               setUserDetail({ ...userDetail, password: e.target.value })
             }
           />
-        </div>
-        <div>
-          <button className={style.loginBtn}>SIGNUP</button>
-        </div>
-        <p className={style.signupLine}>
+        </FormGroup>
+      
+          <Button>SIGNUP</Button>
+        
+        <p class = "mt-20">
           Already a user?{" "}
-          <Link to="/studentLogin" className={style.signup}>
+          <Link to="/studentLogin">
             Login
           </Link>{" "}
         </p>
-      </form>
+      </Form>
+      </div>
     </div>
   );
 }

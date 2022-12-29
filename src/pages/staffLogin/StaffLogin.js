@@ -1,9 +1,11 @@
 import style from "./StaffLogin.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { useDispatch, useSelector } from "react-redux";
 import { staffLogin } from "../../features/index";
 import { toast } from "react-toastify";
+import {Input,Label,Button,Form,FormGroup} from "reactstrap";
 
 export function StaffLogin() {
   const [userDetail, setUserDetail] = useState({ email: null, password: null });
@@ -25,14 +27,15 @@ export function StaffLogin() {
   };
 
   return (
-    <div className={style.loginPage}>
-      <h1>Welcome To Staff Login</h1>
-      <form className={style.form} onSubmit={loginHandler}>
+    <div>
+      <h1 className="p-20">Welcome To Staff Login</h1>
+      <div>
+      <Form onSubmit={loginHandler}>
         <div>
-          <label htmlFor="email">Email</label>
-          <input
+          <Label className = "d-block" htmlFor="email">Email</Label>
+          <Input
             type="email"
-            id="email"
+            className="w-50 m-auto mb-10 text-center h-100"
             name="email"
             placeholder="Enter your email here"
             value={userDetail.email}
@@ -43,11 +46,11 @@ export function StaffLogin() {
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <input
+          <Label className = "d-block" htmlFor="password">Password</Label>
+          <Input
             type="password"
-            id="password"
             name="password"
+            className="w-50 m-auto text-center h-100"
             placeholder = "Enter your password here"
             value={userDetail.password}
             required
@@ -56,17 +59,19 @@ export function StaffLogin() {
             }
           />
         </div>
-        <div>
-          <button className={style.loginBtn}>LOGIN</button>
-          <br />
-        </div>
+        
+          <Button>LOGIN</Button>
+          
+        
         <p className={style.signupLine}>
           New here?{" "}
           <Link to="/staffSignup" className={style.signup}>
             Signup
           </Link>{" "}
         </p>
-      </form>
+        
+      </Form>
+      </div>
     </div>
   );
 }
