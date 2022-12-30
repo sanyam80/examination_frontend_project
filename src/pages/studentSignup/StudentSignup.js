@@ -15,6 +15,9 @@ export function StudentSignup() {
     password: "",
     isActive: true,
   });
+  const [userDetailError, setUserDetailError] = useState(false);
+  const [userEmailDetail,setUserEmailDetail] = useState(false);
+  const [userPassword,setUserPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const location = useLocation();
@@ -22,7 +25,7 @@ export function StudentSignup() {
 
   const signupHandler = (e) => {
     e.preventDefault();
-    dispatch(studentSignup(userDetail)).then((res) => {
+    dispatch(studentSignup({userDetail})).then((res) => {
       if (res.error) {
         // toast.error("Enter the correct credentials");
       } else {
@@ -32,14 +35,47 @@ export function StudentSignup() {
     });
   };
 
+  const userNameHandler = (e) => {
+    const re=/^[A-Za-z]+$/;
+    const name = e.target.value
+    
+    if (re.test(name)) {
+      setUserDetailError(false)
+      setUserDetail({ ...userDetail, name: e.target.value })
+      console.log(e.target.value);
+      return 
+    }
+    setUserDetailError(true);
+  }
+  // const userEmailHandler = (e)=>{
+  //   const re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  //   const email = e.target.value;
+  //   // setUserDetail({ ...userDetail, email: e.target.value })
+  //   if(re.test(email)){
+  //     setUserEmailDetail(false)
+  //     setUserDetail({ ...userDetail, email: e.target.value })
+  //     return
+  //   }
+  //   setUserEmailDetail(true);
+
+  // }
+  const userPasswordHandler = (e)=>{
+      setUserDetail({ ...userDetail, password: e.target.value });
+      if (e.target.value?.length < 8) {
+        setUserPassword(true)
+      } else {
+        setUserPassword(false)
+      }
+  }
+
   return (
     <div>
      <h1>Welcome To Student Signup</h1>
      <div className="mt-20">
       <Form onSubmit={signupHandler}>
 
-        <FormGroup>
-          <Label class = "d-block">Name</Label>
+        <FormGroup className="display-content-column">
+          <Label className= "d-block">Name</Label>
           <Input
             type="text"
             className = "w-50 m-auto text-center h-100"
@@ -48,9 +84,14 @@ export function StudentSignup() {
             placeholder="Enter your name here"
             required
             onChange={(e) =>
-              setUserDetail({ ...userDetail, name: e.target.value })
+              userNameHandler(e)
+              
             }
           />
+          {console.log(userDetailError)}
+          { userDetailError && (
+            <small className="h6 text-blue">Username Cannot have Special Character</small>
+          ) }
         </FormGroup>
         {' '}
         <FormGroup>
@@ -63,9 +104,15 @@ export function StudentSignup() {
             placeholder="Enter your email here"
             required
             onChange={(e) =>
+              // userEmailHandler(e)
               setUserDetail({ ...userDetail, email: e.target.value })
             }
           />
+          { 
+           userEmailDetail && (
+            <small className = "h6">Email Cannot have Special Character</small>
+           )
+          }
         </FormGroup>
         {' '}
         <FormGroup>
@@ -78,9 +125,15 @@ export function StudentSignup() {
             placeholder="Enter your password here"
             required
             onChange={(e) =>
-              setUserDetail({ ...userDetail, password: e.target.value })
+               userPasswordHandler(e)
+              
             }
           />
+          {
+            userPassword && (
+              <small className = "h6">Password must have 8 characters</small>
+            )
+          }
         </FormGroup>
       
           <Button>SIGNUP</Button>

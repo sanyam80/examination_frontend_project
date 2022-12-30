@@ -1,7 +1,5 @@
 import style from "./ExamCard.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button} from "reactstrap";
 
 export const ExamCard = ({ examId, examName, examScore }) => {
   console.log(examScore);
@@ -9,13 +7,13 @@ export const ExamCard = ({ examId, examName, examScore }) => {
   const { pathname } = useLocation();
   console.log(pathname);
   return (
-    <div>
+    <div className={style.card}>
       <p className={style.exam_card}>{examName}</p>
       {examScore || examScore === 0 ? (
         <p>Marks Scored: {examScore}</p>
       ) : (
         localStorage.getItem("studentDetail") && (
-          <Button className = {style.exam_name} onClick={() => navigate(`/examPaper/${examId}`)}>Start Exam</Button>
+          <p className = {style.exam_name} onClick={() => navigate(`/examPaper/${examId}`)}>Start Exam</p>
         )
       )}
       {(examScore || examScore === 0) && (

@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { getAllExamsWithScores } from "../../features/index";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import style from "./StudentPortalHome.module.css";
+// import style from "./StudentPortalHome.module.css";
 
 export const StudentPortal = () => {
   const dispatch = useDispatch();

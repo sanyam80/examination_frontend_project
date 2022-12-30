@@ -7,7 +7,6 @@ import { AddQuestion } from "../addQuestion/AddQuestion";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./StaffPortalHome.module.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button} from "reactstrap";
 
 export const StaffPortalHome = () => {
   const dispatch = useDispatch();
@@ -21,9 +20,10 @@ export const StaffPortalHome = () => {
   //   return <AddQuestion />
   // }
   return (
-    <div>
+    <div class = "bg-#f1f5f9">
       <Navbar />
-      
+      <div class = "h2 p-3">Details About Tests</div>
+      <br />
       <div className={style.allExamCards}>
         {allExamsWithScores.map((exam) => (
           <ExamCard
@@ -34,7 +34,7 @@ export const StaffPortalHome = () => {
           
         ))}
         <div  onClick={() => setModal(true)}>
-          <Button className = {style.button_name}>Add Test</Button>
+          <button className = {style.button_name}>Add Test</button>
         </div>
       </div>
       {modal && <AddTestModal setModal={setModal} />}
