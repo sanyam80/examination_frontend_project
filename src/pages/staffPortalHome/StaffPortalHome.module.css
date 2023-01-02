@@ -1,4 +1,4 @@
-.allExamCards {
+/* .allExamCards {
     display: flex;
     flex-wrap: wrap;
     row-gap: 3rem;
@@ -21,12 +21,18 @@
     transition-property: all;
     transition-duration: 1s;
   }
-  .button_name{
+  /* .button_name{
     margin-top: 80px;
     margin-left: 100px;
-  }
-  
-  .addTest:hover {
+  } */
+  /*  */
+  /* .addTest:hover {
     cursor: pointer;
     transform: scale(1.2);
+  } */ 
+
+  .data_fetch{
+    margin-top:40px;
+      display: flex;
+      justify-content: center;
   }

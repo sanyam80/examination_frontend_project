@@ -17,7 +17,7 @@ export const StudentPortal = () => {
       <Navbar />
       <div>
         {allExamsWithScores.map((exam) => (
-          <div className = "shadow-lg p-3  m-5 bg-body rounded">
+          <div className = "shadow-lg p-1  m-5 bg-body rounded text-center">
             
           <ExamCard examName={exam?.examName} examScore={exam?.score}
             examId={exam?.examId}

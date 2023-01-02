@@ -9,6 +9,9 @@ import {Input,Label,Button,Form,FormGroup} from "reactstrap";
 
 export function StaffLogin() {
   const [userDetail, setUserDetail] = useState({ email: null, password: null });
+  const { studentDetail, error } = useSelector((store) => store.studentAuth);
+  const [userEmailDetail,setUserEmailDetail] = useState(false);
+  const [userPassword,setUserPassword] = useState(false);
   const { staffDetail } = useSelector((store) => store.staffAuth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -25,6 +28,26 @@ export function StaffLogin() {
       }
     });
   };
+  const userEmailHandler = (e)=>{
+    const re = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    const email = e.target.value;
+    setUserDetail({ ...userDetail, email: e.target.value })
+    if(re.test(email)){
+      setUserEmailDetail(false)
+      setUserDetail({ ...userDetail, email: e.target.value })
+      return
+    }
+    setUserEmailDetail(true);
+
+  }
+  const userPasswordHandler = (e)=>{
+        setUserDetail({ ...userDetail, password: e.target.value });
+        if (e.target.value?.length < 8) {
+          setUserPassword(true)
+        } else {
+          setUserPassword(false)
+        }
+    }
 
   return (
     <div>
@@ -41,9 +64,17 @@ export function StaffLogin() {
             value={userDetail.email}
             required
             onChange={(e) =>
-              setUserDetail({ ...userDetail, email: e.target.value })
+              userEmailHandler(e)
+              // setUserDetail({ ...userDetail, email: e.target.value })
             }
           />
+          {
+            
+            userEmailDetail && (
+             <small className = "h6">Email Cannot have Special Character</small>
+            )
+          
+        }
         </div>
         <div>
           <Label className = "d-block" htmlFor="password">Password</Label>
@@ -55,9 +86,17 @@ export function StaffLogin() {
             value={userDetail.password}
             required
             onChange={(e) =>
-              setUserDetail({ ...userDetail, password: e.target.value })
+              userPasswordHandler(e)
+              // setUserDetail({ ...userDetail, password: e.target.value })
             }
           />
+           {
+            
+            userPassword && (
+              <small className = "h6">Password must have 8 characters</small>
+            )
+          
+        }
         </div>
         
           <Button>LOGIN</Button>

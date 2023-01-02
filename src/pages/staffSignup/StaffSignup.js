@@ -13,6 +13,9 @@ export function StaffSignup() {
     email: "",
     password: "",
   });
+  const [userDetailError, setUserDetailError] = useState(false);
+  const [userEmailDetail,setUserEmailDetail] = useState(false);
+  const [userPassword,setUserPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { staffDetail } = useSelector((store) => store.staffAuth);
@@ -29,6 +32,26 @@ export function StaffSignup() {
       }
     });
   };
+  const userNameHandler = (e) => {
+    const re=/^[A-Za-z]+$/;
+    const name = e.target.value
+    
+    if (re.test(name)) {
+      setUserDetailError(false)
+      setUserDetail({ ...userDetail, name: e.target.value })
+      console.log(e.target.value);
+      return 
+    }
+    setUserDetailError(true);
+  }
+  const userPasswordHandler = (e)=>{
+    setUserDetail({ ...userDetail, password: e.target.value });
+    if (e.target.value?.length < 8) {
+      setUserPassword(true)
+    } else {
+      setUserPassword(false)
+    }
+}
 
   return (
     <div>
@@ -45,9 +68,13 @@ export function StaffSignup() {
             value={userDetail.name}
             required
             onChange={(e) =>
-              setUserDetail({ ...userDetail, name: e.target.value })
+              userNameHandler(e)
+              // setUserDetail({ ...userDetail, name: e.target.value })
             }
           />
+          { userDetailError && (
+            <small className="h6 text-blue">Username Cannot have Special Character</small>
+          ) }
           </FormGroup>
           {' '}
         
@@ -64,6 +91,7 @@ export function StaffSignup() {
               setUserDetail({ ...userDetail, email: e.target.value })
             }
           />
+          
         </FormGroup>
         {' '}
         <FormGroup>
@@ -76,9 +104,15 @@ export function StaffSignup() {
             value={userDetail.password}
             required
             onChange={(e) =>
-              setUserDetail({ ...userDetail, password: e.target.value })
+              userPasswordHandler(e)
+              // setUserDetail({ ...userDetail, password: e.target.value })
             }
           />
+          {
+            userPassword && (
+              <small className = "h6">Password must have 8 characters</small>
+            )
+          }
         </FormGroup>
         {' '}
         <div>

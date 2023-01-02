@@ -1,5 +1,7 @@
 import style from "./ExamCard.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from "reactstrap";
 
 export const ExamCard = ({ examId, examName, examScore }) => {
   console.log(examScore);
@@ -13,7 +15,7 @@ export const ExamCard = ({ examId, examName, examScore }) => {
         <p>Marks Scored: {examScore}</p>
       ) : (
         localStorage.getItem("studentDetail") && (
-          <p className = {style.exam_name} onClick={() => navigate(`/examPaper/${examId}`)}>Start Exam</p>
+          <p onClick={() => navigate(`/examPaper/${examId}`)}>Start Exam</p>
         )
       )}
       {(examScore || examScore === 0) && (
@@ -21,15 +23,15 @@ export const ExamCard = ({ examId, examName, examScore }) => {
       )}
       {pathname === "/staffPortalHome" && (
         <div className={style.actionButtons}>
-          <button onClick={() => navigate(`/viewPaper/${examId}`)}>
+          <Button onClick={() => navigate(`/viewPaper/${examId}`)}>
             See All Questions
-          </button>
-          <button onClick={() => navigate(`/addQuestion/${examId}`)}>
+          </Button>
+          <Button onClick={() => navigate(`/addQuestion/${examId}`)}>
             Add New Questions
-          </button>
-          <button onClick={() => navigate(`/deleteQuestions/${examId}`)}>
+          </Button>
+          <Button onClick={() => navigate(`/deleteQuestions/${examId}`)}>
             Delete Questions
-          </button>
+          </Button>
         </div>
       )}
     </div>

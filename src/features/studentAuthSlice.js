@@ -11,7 +11,7 @@ const initialState = {
 const studentSignup = createAsyncThunk(
   "studentAuth/signup",
   async (studentDetail) => {
-    console.log(studentDetail)
+    // console.log(studentDetail)
     try {
       const response = await axios.post("student/", studentDetail);
       return response.data;

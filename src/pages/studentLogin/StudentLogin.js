@@ -53,8 +53,8 @@ export function StudentLogin() {
   return (
     <div>
       <h2>Welcome To Student Login</h2>
-      <div>
-      <Form className = "mt-20" onSubmit={loginHandler}>
+      <div class= "shadow-lg p-2 m-5 bg-white rounded">
+      <Form onSubmit={loginHandler}>
         <FormGroup>
           <Label htmlFor="email" className = "d-block">Email</Label>
           <Input
@@ -102,7 +102,7 @@ export function StudentLogin() {
           }
         </FormGroup>
         {' '}
-         <Button className = "h-70">LOGIN</Button>
+         <Button className = "h-100 w-20">LOGIN</Button>
           <p className = "pt-100">
           New here?{" "}
           <Link to="/studentSignup">
