@@ -4,12 +4,10 @@
     flex-direction: column;
     width: 18.75rem;
     height: 10.547rem;
-    /* justify-content: flex-end; */
     justify-content: center;
     align-items: center;
     border-radius: 0.5rem;
     transition-property: all;
-    
     font-size: 1rem;
     margin-left: 30px;
   }

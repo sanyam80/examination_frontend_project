@@ -4,6 +4,8 @@ import { postQuestion } from "../../features/index";
 import style from "./AddQuestion.css";
 import { Navbar } from "../../components/index";
 import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button,Input,Label } from "reactstrap";
 
 export const AddQuestion = () => {
   const { examId } = useParams();
@@ -38,14 +40,14 @@ export const AddQuestion = () => {
   }
 
   return (
-    <div className={style.addQuestionPage}>
+    <div>
       <Navbar />
 
-      <form onSubmit={submitHandler} className={style.questionForm}>
+      <form onSubmit={submitHandler}>
         {allExamsWithScores.find((exam) => exam.examId === examId)?.examName}
-        <input
+        <Input
           type="text"
-
+          className = "text-center w-50 m-auto"
           placeholder="Enter Question"
           onChange={(e) =>
             setCompleteQuestion({
@@ -56,8 +58,9 @@ export const AddQuestion = () => {
           value={completeQuestion.question}
         />
 
-        <input
+        <Input
           type="text"
+          className = "text-center w-50 m-auto"
           placeholder="Option 1"
           onChange={(e) =>
             setCompleteQuestion({
@@ -67,8 +70,9 @@ export const AddQuestion = () => {
           }
           value={completeQuestion.option1}
         />
-        <input
+        <Input
           type="text"
+          className = "text-center w-50 m-auto"
           placeholder="option 2"
           onChange={(e) =>
             setCompleteQuestion({
@@ -78,8 +82,9 @@ export const AddQuestion = () => {
           }
           value={completeQuestion.option2}
         />
-        <input
+        <Input
           type="text"
+          className = "text-center w-50 m-auto"
           placeholder="Option 3"
           onChange={(e) =>
             setCompleteQuestion({
@@ -89,8 +94,9 @@ export const AddQuestion = () => {
           }
           value={completeQuestion.option3}
         />
-        <input
+        <Input
           type="text"
+          className = "text-center w-50 m-auto"
           placeholder="Option 4"
           onChange={(e) =>
             setCompleteQuestion({
@@ -100,8 +106,9 @@ export const AddQuestion = () => {
           }
           value={completeQuestion.option4}
         />
-        <input
+        <Input
           type="text"
+          className = "text-center w-50 m-auto"
           placeholder="Enter Correct Answer"
           onChange={(e) =>
             setCompleteQuestion({
@@ -112,7 +119,7 @@ export const AddQuestion = () => {
           value={completeQuestion.correct_ans}
         />
         <div className={style.addquestion_btn}>
-         <button onClick = {()=>addQuestion}>Add Question</button>
+         <Button onClick = {()=>addQuestion}>Add Question</Button>
         </div>
       </form>
     </div>

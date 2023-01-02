@@ -27,16 +27,16 @@
     font-size: 1.2rem;
   }
   
-  .input {
+  /* .input {
     font-size: 1.1rem;
     padding: 0.2rem;
     width: 90%;
-  }
+  } */
   
-  .submitBtn {
+  /* .submitBtn {
     background-color: var(--button-dark-color);
     color: var(--text-color);
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
     font-size: 1.1rem;
-  }
+  } */
